@@ -261,9 +261,21 @@ data: {}
                 });
 
    var element = shutter.querySelectorAll("#sc-shutter-button-autoclose")[0];
-   element.classList.toggle("sc-shutter-button-autoclose-true");
-   element.classList.toggle("sc-shutter-button-autoclose-false");
+      const stateTog = hass.states[entityTog].state;
+         var element = shutter.querySelectorAll("#sc-shutter-button-autoclose")[0];
+    if(stateTog == "on")
+    {
+   element.classList.add("sc-shutter-button-autoclose-true");
+    element.classList.remove("sc-shutter-button-autoclose-false");  
+   
 
+    }
+      else
+
+    {
+element.classList.add("sc-shutter-button-autoclose-false");
+element.classList.remove("sc-shutter-button-autoclose-true");
+    }
                 
               }
               
@@ -287,7 +299,7 @@ data: {}
             .sc-shutter-buttons ha-icon-button { display: block; width: min-content }
 
           .sc-shutter-button-autoclose-true {color: red}
-          .sc-shutter-button-autoclose-false {color: blue}
+          .sc-shutter-button-autoclose-false {color: green}
             
             .sc-shutter-selector { flex: 1; }
               .sc-shutter-selector-partial { position: absolute; top:0; left: 9px; width: 88%; height: 1px; background-color: gray; }
