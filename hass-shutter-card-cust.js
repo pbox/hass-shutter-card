@@ -348,6 +348,23 @@ data: {}
       const friendlyName = (entity && entity.name) ? entity.name : state ? state.attributes.friendly_name : 'unknown';
       const currentPosition = state ? state.attributes.current_position : 'unknown';
       const movementState = state? state.state : 'unknown';
+
+
+      const stateTog = hass.states[entityTog].state;
+    if(stateTog == "on")
+    {
+   element.classList.toggle("sc-shutter-button-autoclose-true");
+   
+
+    }
+      else
+
+    {
+element.classList.toggle("sc-shutter-button-autoclose-false");
+
+    }
+
+      
       
       shutter.querySelectorAll('.sc-shutter-label').forEach(function(shutterLabel) {
           shutterLabel.innerHTML = friendlyName;
