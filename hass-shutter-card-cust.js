@@ -86,7 +86,7 @@ class ShutterCardCust extends HTMLElement {
             <div class="sc-shutter-buttons" style="flex-flow: ` + (buttonsInRow ? 'row': 'column') + ` wrap;">
               `+(partial?`<ha-icon-button label="Partially close" class="sc-shutter-button sc-shutter-button-partial" data-command="partial" data-position="`+partial+`"><ha-icon icon="mdi:arrow-expand-vertical"></ha-icon></ha-icon-button>`:``)+`
               ` +
-          `<ha-icon-button label="Auto close today" class="sc-shutter-button sc-shutter-button-autoclose" data-command="auto-close"><ha-icon icon="mdi:close-box"></ha-icon></ha-icon-button>`
+          `<ha-icon-button label="Auto close today" class="sc-shutter-button sc-shutter-button-autoclose-true" data-command="auto-close"><ha-icon icon="mdi:close-box"></ha-icon></ha-icon-button>`
           
           
           + (tilt?`
@@ -272,8 +272,15 @@ data: {}
           .sc-shutter { margin-top: 1rem; overflow: hidden; }
           .sc-shutter:first-child { margin-top: 0; }
           .sc-shutter-middle { display: flex; width: fit-content; max-width: 100%; margin: auto; }
+
+          
             .sc-shutter-buttons { flex: 1; text-align: center; margin-top: 0.4rem; display: flex; max-width: 100% }
+
             .sc-shutter-buttons ha-icon-button { display: block; width: min-content }
+
+          .sc-shutter-button-autoclose-true {color: red}
+          .sc-shutter-button-autoclose-false {color: blue}
+            
             .sc-shutter-selector { flex: 1; }
               .sc-shutter-selector-partial { position: absolute; top:0; left: 9px; width: 88%; height: 1px; background-color: gray; }
               .sc-shutter-selector-picture { position: relative; margin: auto; background-size: 100% 100%; min-height: 150px; max-height: 100%; }
