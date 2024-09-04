@@ -204,9 +204,9 @@ target:
   entity_id: 
 data: {}
 */
-        let autoopentoggle=shutter.querySelectorAll("#sc-shutter-button-autoclose");
+/*        let autoopentoggle=shutter.querySelectorAll("#sc-shutter-button-autoclose");
 
-        console.log(autoopentoggle);
+        console.log(autoopentoggle);*/
         shutter.querySelectorAll('.sc-shutter-button').forEach(function (button) {
             button.onclick = function () {
                 const command = this.dataset.command;
