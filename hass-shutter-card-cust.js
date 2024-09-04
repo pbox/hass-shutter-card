@@ -320,6 +320,11 @@ data: {}
         entityId = entity.entity;
       }
 
+        let entityTog = entity;
+        if (entity && entity.entitytog) {
+            entityTog = entity.entitytog;
+        }
+      
       let invertPercentage = false;
       if (entity && entity.invert_percentage) {
         invertPercentage = entity.invert_percentage;
