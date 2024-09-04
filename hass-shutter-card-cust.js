@@ -24,7 +24,7 @@ class ShutterCardCust extends HTMLElement {
 
         let entityTog = entity;
         if (entity && entity.entitytog) {
-            entitytog = entity.entitytog;
+            entityTog = entity.entitytog;
         }
 
 
@@ -254,7 +254,7 @@ data: {}
               else
               {
                 hass.callService('input_boolean', service, {
-                  entity_id: entitytog,
+                  entity_id: entityTog,
                   ...args
                 });
               }
