@@ -87,7 +87,7 @@ class ShutterCardCust extends HTMLElement {
               `+(partial?`<ha-icon-button label="Partially close" class="sc-shutter-button sc-shutter-button-partial" data-command="partial" data-position="`+partial+`"><ha-icon icon="mdi:arrow-expand-vertical"></ha-icon></ha-icon-button>`:``)+`
               ` +
           `<ha-icon-button label="Auto close today" id="sc-shutter-button-autoclose" class="sc-shutter-button sc-shutter-button-autoclose-true" data-command="auto-close"><ha-icon icon="mdi:close-box"></ha-icon></ha-icon-button>`
-          
+
           
           + (tilt?`
               <ha-icon-button label="` + hass.localize(`ui.dialogs.more_info_control.cover.open_tilt_cover`) +`" class="sc-shutter-button sc-shutter-button-tilt-open" data-command="tilt-open"><ha-icon icon="mdi:arrow-top-right"></ha-icon></ha-icon-button>
@@ -258,7 +258,7 @@ data: {}
                   ...args
                 });
 
-   var element = document.getElementById("sc-shutter-button-autoclose");
+   var element = shutter.getElementById("sc-shutter-button-autoclose");
    element.classList.toggle("sc-shutter-button-autoclose-true");
    element.classList.toggle("sc-shutter-button-autoclose-false");
 
