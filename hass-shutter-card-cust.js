@@ -204,7 +204,9 @@ target:
   entity_id: 
 data: {}
 */
-        
+        let autoopentoggle=shutter.querySelectorAll("#sc-shutter-button-autoclose");
+
+        console.log(autoopentoggle);
         shutter.querySelectorAll('.sc-shutter-button').forEach(function (button) {
             button.onclick = function () {
                 const command = this.dataset.command;
@@ -258,7 +260,7 @@ data: {}
                   ...args
                 });
 
-   var element = shutter.getElementById("sc-shutter-button-autoclose");
+   var element = shutter.querySelectorAll("#sc-shutter-button-autoclose")[0];
    element.classList.toggle("sc-shutter-button-autoclose-true");
    element.classList.toggle("sc-shutter-button-autoclose-false");
 
