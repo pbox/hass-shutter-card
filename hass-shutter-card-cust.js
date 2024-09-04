@@ -356,6 +356,7 @@ data: {}
 
 
       const stateTog = hass.states[entityTog].state;
+         var element = shutter.querySelectorAll("#sc-shutter-button-autoclose")[0];
     if(stateTog == "on")
     {
    element.classList.toggle("sc-shutter-button-autoclose-true");
