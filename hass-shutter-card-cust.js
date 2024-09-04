@@ -21,6 +21,13 @@ class ShutterCardCust extends HTMLElement {
         if (entity && entity.entity) {
             entityId = entity.entity;
         }
+
+        let entityTog = entity;
+        if (entity && entity.entitytog) {
+            entitytog = entity.entitytog;
+        }
+
+
         
         let buttonsPosition = 'left';
         if (entity && entity.buttons_position) {
@@ -190,6 +197,14 @@ class ShutterCardCust extends HTMLElement {
         picker.addEventListener('pointerdown', mouseDown);
         
         //Manage click on buttons
+
+/*
+action: input_boolean.toggle
+target:
+  entity_id: 
+data: {}
+*/
+        
         shutter.querySelectorAll('.sc-shutter-button').forEach(function (button) {
             button.onclick = function () {
                 const command = this.dataset.command;
@@ -205,7 +220,11 @@ class ShutterCardCust extends HTMLElement {
                   case 'down':
                       service = 'close_cover';
                       break;
-
+                    
+                  case 'auto-close':
+                      service = 'toggle';
+                      break;
+                    
                   case 'stop':
                       service = 'stop_cover';
                       break;
@@ -224,11 +243,22 @@ class ShutterCardCust extends HTMLElement {
                   default:
                     return
                 }
-                
+
+              if(service != "toggle")
+              {
                 hass.callService('cover', service, {
                   entity_id: entityId,
                   ...args
                 });
+              }
+              else
+              {
+                hass.callService('input_boolean', service, {
+                  entity_id: entitytog,
+                  ...args
+                });
+              }
+              
             };
         });
       
