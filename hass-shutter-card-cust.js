@@ -359,14 +359,14 @@ data: {}
          var element = shutter.querySelectorAll("#sc-shutter-button-autoclose")[0];
     if(stateTog == "on")
     {
-   element.classList.toggle("sc-shutter-button-autoclose-true");
+   element.classList.add("sc-shutter-button-autoclose-true");
    
 
     }
       else
 
     {
-element.classList.toggle("sc-shutter-button-autoclose-false");
+element.classList.add("sc-shutter-button-autoclose-false");
 
     }
 
