@@ -372,6 +372,7 @@ element.classList.remove("sc-shutter-button-autoclose-true");
     if(stateTog == "on")
     {
    element.classList.add("sc-shutter-button-autoclose-true");
+    element.classList.remove("sc-shutter-button-autoclose-false");  
    
 
     }
@@ -379,7 +380,7 @@ element.classList.remove("sc-shutter-button-autoclose-true");
 
     {
 element.classList.add("sc-shutter-button-autoclose-false");
-
+element.classList.remove("sc-shutter-button-autoclose-true");
     }
 
       
